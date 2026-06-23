@@ -271,7 +271,7 @@
       margin: 20px 0;
     }
 
-    .hours div,
+    .hours > div,
     .contact-line {
       display: flex;
       justify-content: space-between;
@@ -286,6 +286,40 @@
     .hours strong,
     .contact-line strong {
       color: var(--ink);
+    }
+
+    .opening-hours {
+      display: grid;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .opening-hours p {
+      margin: 0;
+      padding: 8px 10px;
+      border-radius: var(--radius);
+      background: rgba(16,17,21,.045);
+    }
+
+    .opening-hours strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .opening-hours span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .opening-hours.invert span {
+      color: rgba(255,255,255,.68);
+    }
+
+    .opening-hours.invert p {
+      background: rgba(255,255,255,.08);
     }
 
     main {
@@ -667,6 +701,11 @@
       text-align: right;
     }
 
+    .contact-item .opening-hours {
+      max-width: 360px;
+      text-align: right;
+    }
+
     .map-panel {
       min-height: 520px;
       padding: 32px;
@@ -862,7 +901,7 @@
 
       .price-row,
       .contact-item,
-      .hours div,
+      .hours > div,
       .contact-line,
       .creator-inner,
       .map-footer {
@@ -872,6 +911,11 @@
 
       .price-row strong,
       .contact-item strong {
+        text-align: left;
+      }
+
+      .contact-item .opening-hours {
+        max-width: none;
         text-align: left;
       }
     }
@@ -929,7 +973,14 @@
             <div><span>Adresse</span><strong>69 cours Saint-André<br>38800 Le Pont-de-Claix</strong></div>
             <div><span>Téléphone</span><strong>04 76 72 52 04</strong></div>
             <div><span>Email</span><strong>garageautomobile38@gmail.com</strong></div>
-            <div><span>Horaires</span><strong>Lundi au Jeudi : 09h00-12h30 et 13h30-18h00<br>Vendredi : 09h00-12h00 et 14h00-18h00<br>Samedi : 09h00-12h30 et 14h00-18h00</strong></div>
+            <div>
+              <span>Horaires</span>
+              <div class="opening-hours" aria-label="Horaires d'ouverture">
+                <p><strong>Lundi au Jeudi</strong><span>09h00-12h30 et 13h30-18h00</span></p>
+                <p><strong>Vendredi</strong><span>09h00-12h00 et 14h00-18h00</span></p>
+                <p><strong>Samedi</strong><span>09h00-12h30 et 14h00-18h00</span></p>
+              </div>
+            </div>
           </div>
           <a class="btn" href="#contact">Demander un devis</a>
         </aside>
@@ -1118,7 +1169,14 @@
             <div class="contact-item"><span>Téléphone</span><strong><a href="tel:+33476725204">04 76 72 52 04</a></strong></div>
             <div class="contact-item"><span>Email</span><strong><a href="mailto:garageautomobile38@gmail.com">garageautomobile38@gmail.com</a></strong></div>
             <div class="contact-item"><span>Adresse</span><strong>69 cours Saint-André, 38800 Le Pont-de-Claix</strong></div>
-            <div class="contact-item"><span>Horaires</span><strong>Lundi au Jeudi : 09h00-12h30 et 13h30-18h00<br>Vendredi : 09h00-12h00 et 14h00-18h00<br>Samedi : 09h00-12h30 et 14h00-18h00</strong></div>
+            <div class="contact-item">
+              <span>Horaires</span>
+              <div class="opening-hours invert" aria-label="Horaires d'ouverture">
+                <p><strong>Lundi au Jeudi</strong><span>09h00-12h30 et 13h30-18h00</span></p>
+                <p><strong>Vendredi</strong><span>09h00-12h00 et 14h00-18h00</span></p>
+                <p><strong>Samedi</strong><span>09h00-12h30 et 14h00-18h00</span></p>
+              </div>
+            </div>
           </div>
           <div class="hero-actions">
             <a class="btn" href="tel:+33476725204">Appeler le garage</a>
